@@ -695,282 +695,274 @@ iframe{
 
 <div class="container">
 
-  <div class="header">
+<div class="header">
 
-    <div class="left-header">
+<div class="left-header">
 
-      <div class="fire-box">
+<div class="fire-box">
 
-        <img src="https://cdn-icons-png.flaticon.com/512/785/785116.png">
+<img src="https://cdn-icons-png.flaticon.com/512/785/785116.png">
 
-        <div class="streak" id="streak">
-          0
-        </div>
+<div class="streak" id="streak">
+1
+</div>
 
-      </div>
+</div>
 
-      <div class="title">
+<div class="title">
 
-        <h1>MDungx Timer</h1>
+<h1>MDungx Timer</h1>
 
-        <p>
-          Học tập hiệu quả — tập trung tối đa.
-        </p>
+<p>
+Học tập hiệu quả — tập trung tối đa.
+</p>
 
-      </div>
+</div>
 
-    </div>
+</div>
 
-    <button
-    class="theme-btn"
-    onclick="toggleTheme();"
-    id="themeBtn">
-      🌙
-    </button>
+<button
+class="theme-btn"
+onclick="toggleTheme();"
+id="themeBtn">
+🌙
+</button>
 
-  </div>
+</div>
 
-  <!-- COUNTDOWN -->
+<!-- COUNTDOWN -->
 
-  <div class="countdown-box">
+<div class="countdown-box">
 
-    <div class="quote" id="quote">
-      “Trí tưởng tượng quan trọng hơn kiến thức.” — Albert Einstein
-    </div>
+<div class="quote" id="quote">
+“Trí tưởng tượng quan trọng hơn kiến thức.” — Albert Einstein
+</div>
 
-    <div class="countdown" id="countdown">
-      00 ngày 00 giờ 00 phút 00 giây
-    </div>
+<div class="countdown" id="countdown">
+00 ngày 00 giờ 00 phút 00 giây
+</div>
 
-    <div class="date-box">
+<div class="date-box">
 
-      <input type="datetime-local" id="targetDate">
+<input type="datetime-local" id="targetDate">
 
-      <button
-      class="main-btn"
-      onclick="setCountdown(); registerActivity();">
-        Đặt thời gian
-      </button>
+<button
+class="main-btn"
+onclick="setCountdown(); registerActivity();">
+Đặt thời gian
+</button>
 
-    </div>
+</div>
 
-  </div>
+</div>
 
-  <!-- MAIN -->
+<div class="main">
 
-  <div class="main">
+<!-- TIMER -->
 
-    <!-- TIMER -->
+<div class="card">
 
-    <div class="card">
+<div class="top-line">
 
-      <div class="top-line">
+<h2 id="statusText">
+Sẵn sàng chưa?
+</h2>
 
-        <h2 id="statusText">
-          Sẵn sàng chưa?
-        </h2>
+<span>
+Thời gian lí tưởng là học 25 phút nghỉ 5 phút
+</span>
 
-        <span>
-          Thời gian lí tưởng là học 25 phút nghỉ 5 phút
-        </span>
+</div>
 
-      </div>
+<div class="study-time" id="studyTimer">
+25:00
+</div>
 
-      <div class="study-time" id="studyTimer">
-        25:00
-      </div>
+<div class="progress">
 
-      <div class="progress">
+<div class="progress-bar" id="progressBar"></div>
 
-        <div class="progress-bar" id="progressBar"></div>
+</div>
 
-      </div>
+<div class="controls">
 
-      <div class="controls">
+<button
+class="control-btn active-btn"
+onclick="startStudyTimer(); registerActivity();">
+▶ Bắt đầu
+</button>
 
-        <button
-        class="control-btn active-btn"
-        onclick="startStudyTimer(); registerActivity();">
-          ▶ Bắt đầu
-        </button>
+<button
+class="control-btn"
+onclick="pauseStudyTimer()">
+⏸ Tạm dừng
+</button>
 
-        <button
-        class="control-btn"
-        onclick="pauseStudyTimer()">
-          ⏸ Tạm dừng
-        </button>
+<button
+class="control-btn"
+onclick="resetStudyTimer()">
+↻ Reset
+</button>
 
-        <button
-        class="control-btn"
-        onclick="resetStudyTimer()">
-          ↻ Reset
-        </button>
+<button
+class="control-btn"
+onclick="toggleSound(); registerActivity();">
+🔔 Chuông
+</button>
 
-        <button
-        class="control-btn"
-        onclick="toggleSound(); registerActivity();">
-          🔔 Chuông
-        </button>
+</div>
 
-      </div>
+<div class="custom-box">
 
-      <div class="custom-box">
+<input
+type="number"
+id="studyInput"
+class="small-input"
+placeholder="Phút học">
 
-        <input
-        type="number"
-        id="studyInput"
-        class="small-input"
-        placeholder="Phút học">
+<input
+type="number"
+id="breakInput"
+class="small-input"
+placeholder="Phút nghỉ">
 
-        <input
-        type="number"
-        id="breakInput"
-        class="small-input"
-        placeholder="Phút nghỉ">
+<button
+class="main-btn"
+onclick="applyCustomTime(); registerActivity();">
+Áp dụng
+</button>
 
-        <button
-        class="main-btn"
-        onclick="applyCustomTime(); registerActivity();">
-          Áp dụng
-        </button>
+</div>
 
-      </div>
+<div class="modes">
 
-      <div class="modes">
+<div
+class="mode"
+onclick="setStudyTime(25,5); registerActivity();">
+25 / 5
+</div>
 
-        <div
-        class="mode"
-        onclick="setStudyTime(25,5); registerActivity();">
-          25 / 5
-        </div>
+<div
+class="mode"
+onclick="setStudyTime(45,10); registerActivity();">
+45 / 10
+</div>
 
-        <div
-        class="mode"
-        onclick="setStudyTime(45,10); registerActivity();">
-          45 / 10
-        </div>
+<div
+class="mode"
+onclick="setStudyTime(60,15); registerActivity();">
+60 / 15
+</div>
 
-        <div
-        class="mode"
-        onclick="setStudyTime(60,15); registerActivity();">
-          60 / 15
-        </div>
+</div>
 
-      </div>
+<div class="history">
 
-      <!-- HISTORY -->
+<h3>
+📚 Lịch sử học hôm nay
+</h3>
 
-      <div class="history">
+<div class="history-list" id="historyList">
 
-        <h3>
-          📚 Lịch sử học hôm nay
-        </h3>
+</div>
 
-        <div class="history-list" id="historyList">
+</div>
 
-        </div>
+</div>
 
-      </div>
+<!-- MUSIC -->
 
-    </div>
+<div class="card">
 
-    <!-- MUSIC -->
+<div class="music-title">
+🎵 Nghe Nhạc Thư Giãn
+</div>
 
-    <div class="card">
+<div class="music-sub">
+Dán link YouTube rồi bấm phát
+</div>
 
-      <div class="music-title">
-        🎵 Nghe Nhạc Thư Giãn
-      </div>
+<div class="music-box">
 
-      <div class="music-sub">
-        Dán link YouTube rồi bấm phát
-      </div>
+<input
+type="text"
+id="youtubeLink"
+placeholder="https://youtube.com/...">
 
-      <div class="music-box">
+<button
+class="main-btn"
+onclick="loadVideo(); registerActivity();">
+Phát
+</button>
 
-        <input
-        type="text"
-        id="youtubeLink"
-        placeholder="https://youtube.com/...">
+</div>
 
-        <button
-        class="main-btn"
-        onclick="loadVideo(); registerActivity();">
-          Phát
-        </button>
+<iframe
+id="youtubePlayer"
+src="https://www.youtube.com/embed/jfKfPfyJRdk"
+allowfullscreen>
+</iframe>
 
-      </div>
+</div>
 
-      <iframe
-      id="youtubePlayer"
-      src="https://www.youtube.com/embed/jfKfPfyJRdk"
-      allowfullscreen>
-      </iframe>
+</div>
 
-    </div>
-
-  </div>
-
-  <div class="footer">
-    MDungx Timer - DŨNG ĐẸP ZAI
-  </div>
+<div class="footer">
+MDungx Timer - DŨNG ĐẸP ZAI
+</div>
 
 </div>
 
 <script>
 
-/* =========================
-   THEME
-========================= */
+/* THEME */
 
 const savedTheme =
 localStorage.getItem("theme");
 
 if(savedTheme === "light"){
 
-  document.body.classList.add("light");
+document.body.classList.add("light");
 
-  document.getElementById("themeBtn").innerHTML =
-  "☀";
+document.getElementById("themeBtn").innerHTML =
+"☀";
 
 }
 
 function toggleTheme(){
 
-  document.body.classList.toggle("light");
+document.body.classList.toggle("light");
 
-  const btn =
-  document.getElementById("themeBtn");
+const btn =
+document.getElementById("themeBtn");
 
-  if(document.body.classList.contains("light")){
+if(document.body.classList.contains("light")){
 
-    btn.innerHTML = "☀";
+btn.innerHTML = "☀";
 
-    localStorage.setItem(
-      "theme",
-      "light"
-    );
-
-  }
-
-  else{
-
-    btn.innerHTML = "🌙";
-
-    localStorage.setItem(
-      "theme",
-      "dark"
-    );
-
-  }
-
-  registerActivity();
+localStorage.setItem(
+"theme",
+"light"
+);
 
 }
 
-/* =========================
-   QUOTES
-========================= */
+else{
+
+btn.innerHTML = "🌙";
+
+localStorage.setItem(
+"theme",
+"dark"
+);
+
+}
+
+registerActivity();
+
+}
+
+/* QUOTES */
 
 const quotes = [
 
@@ -986,9 +978,7 @@ const quotes = [
 
 "“Người không học như ngọc không mài.” — Chu Văn An",
 
-"“Học tập không bao giờ kết thúc.” — Leonardo da Vinci",
-
-"“Trên đời này chỉ có 2 thứ miễn phí từ trên trời rơi xuống, thứ nhất là nước mưa, thứ 2 là cứt chim.” — Minh Dũng"
+"“Học tập không bao giờ kết thúc.” — Leonardo da Vinci"
 
 ];
 
@@ -996,25 +986,23 @@ let quoteIndex = 0;
 
 setInterval(()=>{
 
-  quoteIndex++;
+quoteIndex++;
 
-  if(quoteIndex >= quotes.length){
+if(quoteIndex >= quotes.length){
 
-    quoteIndex = 0;
+quoteIndex = 0;
 
-  }
+}
 
-  document.getElementById("quote").innerHTML =
-  quotes[quoteIndex];
+document.getElementById("quote").innerHTML =
+quotes[quoteIndex];
 
 },5000);
 
-/* =========================
-   STREAK SYSTEM
-========================= */
+/* STREAK */
 
 let streak =
-parseInt(localStorage.getItem("streak")) || 0;
+parseInt(localStorage.getItem("streak")) || 1;
 
 let lastActiveDate =
 localStorage.getItem("lastActiveDate");
@@ -1024,28 +1012,29 @@ new Date().toDateString();
 
 if(lastActiveDate){
 
-  const lastDate =
-  new Date(lastActiveDate);
+const lastDate =
+new Date(lastActiveDate);
 
-  const current =
-  new Date(today);
+const currentDate =
+new Date(today);
 
-  const diff =
-  Math.floor(
-    (current - lastDate)
-    / (1000*60*60*24)
-  );
+const diffDays =
+Math.floor(
+(currentDate - lastDate)
+/
+(1000*60*60*24)
+);
 
-  if(diff > 1){
+if(diffDays > 1){
 
-    streak = 0;
+streak = 1;
 
-    localStorage.setItem(
-      "streak",
-      streak
-    );
+localStorage.setItem(
+"streak",
+streak
+);
 
-  }
+}
 
 }
 
@@ -1054,105 +1043,147 @@ streak;
 
 function registerActivity(){
 
-  const currentDate =
-  new Date().toDateString();
+const currentDate =
+new Date().toDateString();
 
-  const lastDate =
-  localStorage.getItem("lastActiveDate");
+const lastDate =
+localStorage.getItem("lastActiveDate");
 
-  if(lastDate !== currentDate){
+if(!lastDate){
 
-    streak++;
+localStorage.setItem(
+"lastActiveDate",
+currentDate
+);
 
-    localStorage.setItem(
-      "streak",
-      streak
-    );
+localStorage.setItem(
+"streak",
+streak
+);
 
-    localStorage.setItem(
-      "lastActiveDate",
-      currentDate
-    );
-
-    document.getElementById("streak").innerHTML =
-    streak;
-
-  }
+return;
 
 }
 
-/* =========================
-   COUNTDOWN
-========================= */
+if(lastDate !== currentDate){
+
+const oldDate =
+new Date(lastDate);
+
+const newDate =
+new Date(currentDate);
+
+const diff =
+Math.floor(
+(newDate - oldDate)
+/
+(1000*60*60*24)
+);
+
+if(diff === 1){
+
+streak++;
+
+}
+
+else{
+
+streak = 1;
+
+}
+
+localStorage.setItem(
+"streak",
+streak
+);
+
+localStorage.setItem(
+"lastActiveDate",
+currentDate
+);
+
+document.getElementById("streak").innerHTML =
+streak;
+
+}
+
+}
+
+/* COUNTDOWN */
 
 let countdownInterval;
 
 function setCountdown(){
 
-  clearInterval(countdownInterval);
+clearInterval(countdownInterval);
 
-  const target =
-  document.getElementById("targetDate").value;
+const target =
+document.getElementById("targetDate").value;
 
-  if(!target){
+if(!target){
 
-    alert("Vui lòng chọn thời gian!");
+alert("Vui lòng chọn thời gian!");
 
-    return;
+return;
 
-  }
+}
 
-  localStorage.setItem(
-    "targetDate",
-    target
-  );
+localStorage.setItem(
+"targetDate",
+target
+);
 
-  startCountdown(target);
+startCountdown(target);
 
 }
 
 function startCountdown(target){
 
-  const targetDate =
-  new Date(target).getTime();
+const targetDate =
+new Date(target).getTime();
 
-  countdownInterval = setInterval(()=>{
+countdownInterval = setInterval(()=>{
 
-    const now = new Date().getTime();
+const now =
+new Date().getTime();
 
-    const distance = targetDate - now;
+const distance =
+targetDate - now;
 
-    if(distance < 0){
+if(distance < 0){
 
-      document.getElementById("countdown").innerHTML =
-      "🎉 Đã đến mục tiêu!";
+document.getElementById("countdown").innerHTML =
+"🎉 Đã đến mục tiêu!";
 
-      clearInterval(countdownInterval);
+clearInterval(countdownInterval);
 
-      return;
+return;
 
-    }
+}
 
-    const days =
-    Math.floor(distance/(1000*60*60*24));
+const days =
+Math.floor(distance/(1000*60*60*24));
 
-    const hours =
-    Math.floor((distance%(1000*60*60*24))
-    /(1000*60*60));
+const hours =
+Math.floor((distance%(1000*60*60*24))
+/
+(1000*60*60));
 
-    const minutes =
-    Math.floor((distance%(1000*60*60))
-    /(1000*60));
+const minutes =
+Math.floor((distance%(1000*60*60))
+/
+(1000*60));
 
-    const seconds =
-    Math.floor((distance%(1000*60))
-    /1000);
+const seconds =
+Math.floor((distance%(1000*60))
+/
+1000);
 
-    document.getElementById("countdown").innerHTML =
+document.getElementById("countdown").innerHTML =
 
-    `${days} ngày ${hours} giờ ${minutes} phút ${seconds} giây`;
+`${days} ngày ${hours} giờ ${minutes} phút ${seconds} giây`;
 
-  },1000);
+},1000);
 
 }
 
@@ -1161,16 +1192,14 @@ localStorage.getItem("targetDate");
 
 if(savedCountdown){
 
-  document.getElementById("targetDate").value =
-  savedCountdown;
+document.getElementById("targetDate").value =
+savedCountdown;
 
-  startCountdown(savedCountdown);
+startCountdown(savedCountdown);
 
 }
 
-/* =========================
-   TIMER
-========================= */
+/* TIMER */
 
 let studySeconds = 25 * 60;
 let defaultStudy = 25 * 60;
@@ -1188,330 +1217,326 @@ let soundEnabled = true;
 
 function updateStudyDisplay(){
 
-  let currentTime =
-  isBreak ? breakSeconds : studySeconds;
+let currentTime =
+isBreak ? breakSeconds : studySeconds;
 
-  let minutes =
-  Math.floor(currentTime / 60);
+let minutes =
+Math.floor(currentTime / 60);
 
-  let seconds =
-  currentTime % 60;
+let seconds =
+currentTime % 60;
 
-  const timeText =
+const timeText =
 
-  String(minutes).padStart(2,'0')
-  + ":" +
-  String(seconds).padStart(2,'0');
+String(minutes).padStart(2,'0')
++ ":" +
+String(seconds).padStart(2,'0');
 
-  document.getElementById("studyTimer").innerHTML =
-  timeText;
+document.getElementById("studyTimer").innerHTML =
+timeText;
 
-  document.title =
-  running
-  ? "⏳ " + timeText + " | MDungx Timer"
-  : "MDungx Timer";
+document.title =
+running
+? "⏳ " + timeText + " | MDungx Timer"
+: "MDungx Timer";
 
-  if(isBreak){
+if(isBreak){
 
-    document.getElementById("statusText").innerHTML =
-    "☕ Nghỉ ngơi";
+document.getElementById("statusText").innerHTML =
+"☕ Nghỉ ngơi";
 
-  }
+}
 
-  else{
+else{
 
-    document.getElementById("statusText").innerHTML =
-    "📚 Đang học";
+document.getElementById("statusText").innerHTML =
+"📚 Đang học";
 
-  }
+}
 
-  let progress;
+let progress;
 
-  if(isBreak){
+if(isBreak){
 
-    progress =
-    (breakSeconds / defaultBreak) * 100;
+progress =
+(breakSeconds / defaultBreak) * 100;
 
-  }
+}
 
-  else{
+else{
 
-    progress =
-    (studySeconds / defaultStudy) * 100;
+progress =
+(studySeconds / defaultStudy) * 100;
 
-  }
+}
 
-  document.getElementById("progressBar").style.width =
-  progress + "%";
+document.getElementById("progressBar").style.width =
+progress + "%";
 
 }
 
 function setStudyTime(study,rest){
 
-  pauseStudyTimer();
+pauseStudyTimer();
 
-  studySeconds = study * 60;
-  defaultStudy = study * 60;
+studySeconds = study * 60;
+defaultStudy = study * 60;
 
-  breakSeconds = rest * 60;
-  defaultBreak = rest * 60;
+breakSeconds = rest * 60;
+defaultBreak = rest * 60;
 
-  isBreak = false;
+isBreak = false;
 
-  updateStudyDisplay();
+updateStudyDisplay();
 
 }
 
 function applyCustomTime(){
 
-  const study =
-  parseInt(document.getElementById("studyInput").value);
+const study =
+parseInt(document.getElementById("studyInput").value);
 
-  const rest =
-  parseInt(document.getElementById("breakInput").value);
+const rest =
+parseInt(document.getElementById("breakInput").value);
 
-  if(!study || !rest){
+if(!study || !rest){
 
-    alert("Nhập thời gian hợp lệ!");
+alert("Nhập thời gian hợp lệ!");
 
-    return;
+return;
 
-  }
+}
 
-  setStudyTime(study,rest);
+setStudyTime(study,rest);
 
 }
 
 function startStudyTimer(){
 
-  if(running) return;
+if(running) return;
 
-  running = true;
+running = true;
 
-  studyTimer = setInterval(()=>{
+studyTimer = setInterval(()=>{
 
-    if(!isBreak){
+if(!isBreak){
 
-      if(studySeconds > 0){
+if(studySeconds > 0){
 
-        studySeconds--;
+studySeconds--;
 
-      }
+}
 
-      else{
+else{
 
-        isBreak = true;
+isBreak = true;
 
-        saveHistory();
+saveHistory();
 
-        if(soundEnabled){
+if(soundEnabled){
 
-          playBell();
+playBell();
 
-        }
+}
 
-        alert("☕ Đến giờ nghỉ!");
+alert("☕ Đến giờ nghỉ!");
 
-      }
+}
 
-    }
+}
 
-    else{
+else{
 
-      if(breakSeconds > 0){
+if(breakSeconds > 0){
 
-        breakSeconds--;
+breakSeconds--;
 
-      }
+}
 
-      else{
+else{
 
-        clearInterval(studyTimer);
+clearInterval(studyTimer);
 
-        running = false;
+running = false;
 
-        isBreak = false;
+isBreak = false;
 
-        studySeconds = defaultStudy;
-        breakSeconds = defaultBreak;
+studySeconds = defaultStudy;
+breakSeconds = defaultBreak;
 
-        if(soundEnabled){
+if(soundEnabled){
 
-          playBell();
+playBell();
 
-        }
+}
 
-        alert("🔥 Nghỉ xong rồi!");
+alert("🔥 Nghỉ xong rồi!");
 
-      }
+}
 
-    }
+}
 
-    updateStudyDisplay();
+updateStudyDisplay();
 
-  },1000);
+},1000);
 
 }
 
 function pauseStudyTimer(){
 
-  clearInterval(studyTimer);
+clearInterval(studyTimer);
 
-  running = false;
+running = false;
 
 }
 
 function resetStudyTimer(){
 
-  pauseStudyTimer();
+pauseStudyTimer();
 
-  isBreak = false;
+isBreak = false;
 
-  studySeconds = defaultStudy;
-  breakSeconds = defaultBreak;
+studySeconds = defaultStudy;
+breakSeconds = defaultBreak;
 
-  document.getElementById("statusText").innerHTML =
-  "Sẵn sàng chưa?";
+document.getElementById("statusText").innerHTML =
+"Sẵn sàng chưa?";
 
-  updateStudyDisplay();
+updateStudyDisplay();
 
 }
 
 function toggleSound(){
 
-  soundEnabled = !soundEnabled;
+soundEnabled = !soundEnabled;
 
-  alert(
+alert(
 
-    soundEnabled
-    ? "🔔 Đã bật chuông"
-    : "🔕 Đã tắt chuông"
+soundEnabled
+? "🔔 Đã bật chuông"
+: "🔕 Đã tắt chuông"
 
-  );
+);
 
 }
 
 function playBell(){
 
-  const audio =
-  new Audio(
-  "https://actions.google.com/sounds/v1/alarms/alarm_clock.ogg"
-  );
+const audio =
+new Audio(
+"https://actions.google.com/sounds/v1/alarms/alarm_clock.ogg"
+);
 
-  audio.play();
+audio.play();
 
 }
 
-/* =========================
-   YOUTUBE
-========================= */
+/* YOUTUBE */
 
 function loadVideo(){
 
-  const link =
-  document.getElementById("youtubeLink").value.trim();
+const link =
+document.getElementById("youtubeLink").value.trim();
 
-  if(!link){
+if(!link){
 
-    alert("Nhập link YouTube!");
+alert("Nhập link YouTube!");
 
-    return;
-
-  }
-
-  let videoId = "";
-
-  try{
-
-    if(link.includes("watch?v=")){
-
-      videoId =
-      link.split("watch?v=")[1].split("&")[0];
-
-    }
-
-    else if(link.includes("youtu.be/")){
-
-      videoId =
-      link.split("youtu.be/")[1].split("?")[0];
-
-    }
-
-    else{
-
-      videoId = link;
-
-    }
-
-    document.getElementById("youtubePlayer").src =
-
-    `https://www.youtube.com/embed/${videoId}?autoplay=1`;
-
-  }
-
-  catch{
-
-    alert("Link YouTube không hợp lệ!");
-
-  }
+return;
 
 }
 
-/* =========================
-   HISTORY
-========================= */
+let videoId = "";
+
+try{
+
+if(link.includes("watch?v=")){
+
+videoId =
+link.split("watch?v=")[1].split("&")[0];
+
+}
+
+else if(link.includes("youtu.be/")){
+
+videoId =
+link.split("youtu.be/")[1].split("?")[0];
+
+}
+
+else{
+
+videoId = link;
+
+}
+
+document.getElementById("youtubePlayer").src =
+
+`https://www.youtube.com/embed/${videoId}?autoplay=1`;
+
+}
+
+catch{
+
+alert("Link YouTube không hợp lệ!");
+
+}
+
+}
+
+/* HISTORY */
 
 function saveHistory(){
 
-  const today =
-  new Date().toLocaleDateString();
+const today =
+new Date().toLocaleDateString();
 
-  let history =
-  JSON.parse(localStorage.getItem("studyHistory")) || [];
+let history =
+JSON.parse(localStorage.getItem("studyHistory")) || [];
 
-  history.unshift({
+history.unshift({
 
-    date: today,
+date: today,
 
-    time:
-    `${defaultStudy/60} phút học`
+time:
+`${defaultStudy/60} phút học`
 
-  });
+});
 
-  localStorage.setItem(
-    "studyHistory",
-    JSON.stringify(history)
-  );
+localStorage.setItem(
+"studyHistory",
+JSON.stringify(history)
+);
 
-  loadHistory();
+loadHistory();
 
 }
 
 function loadHistory(){
 
-  const list =
-  document.getElementById("historyList");
+const list =
+document.getElementById("historyList");
 
-  list.innerHTML = "";
+list.innerHTML = "";
 
-  let history =
-  JSON.parse(localStorage.getItem("studyHistory")) || [];
+let history =
+JSON.parse(localStorage.getItem("studyHistory")) || [];
 
-  history.forEach(item=>{
+history.forEach(item=>{
 
-    list.innerHTML += `
+list.innerHTML += `
 
-    <div class="history-item">
+<div class="history-item">
 
-      <span>${item.date}</span>
+<span>${item.date}</span>
 
-      <span>${item.time}</span>
+<span>${item.time}</span>
 
-    </div>
+</div>
 
-    `;
+`;
 
-  });
+});
 
 }
 
