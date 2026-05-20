@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>MDungx Timer</title>
 
@@ -39,8 +40,8 @@ body.light{
 
   --bg:#f4f6ff;
   --card:#ffffff;
-  --text:#161616;
-  --sub:#7d88a8;
+  --text:#111111;
+  --sub:#7b84a3;
 
   --main:
   linear-gradient(135deg,#6d5dfc,#c183ff);
@@ -107,16 +108,21 @@ body{
 
   position:relative;
 
-  box-shadow:var(--shadow);
-
   overflow:hidden;
+
+  box-shadow:var(--shadow);
 
 }
 
 .fire-box img{
 
-  width:72px;
-  z-index:2;
+  width:58px;
+
+  position:absolute;
+
+  top:10px;
+
+  z-index:1;
 
 }
 
@@ -124,26 +130,28 @@ body{
 
   position:absolute;
 
-  bottom:8px;
-  right:12px;
+  bottom:10px;
+  right:10px;
+
+  width:32px;
+  height:32px;
+
+  border-radius:50%;
 
   background:#ff9800;
 
-  width:28px;
-  height:28px;
-
-  border-radius:50%;
+  color:white;
 
   display:flex;
   align-items:center;
   justify-content:center;
 
-  font-size:15px;
+  font-size:14px;
   font-weight:700;
 
-  color:white;
-
   border:2px solid white;
+
+  z-index:3;
 
 }
 
@@ -158,9 +166,12 @@ body{
 
   color:var(--sub);
   margin-top:5px;
+
   font-size:18px;
 
 }
+
+/* THEME BUTTON */
 
 .theme-btn{
 
@@ -210,34 +221,15 @@ body{
 
   padding:40px;
 
-  box-shadow:var(--shadow);
-
   margin-bottom:30px;
+
+  box-shadow:var(--shadow);
 
   text-align:center;
 
   position:relative;
 
   overflow:hidden;
-
-}
-
-.countdown-box::before{
-
-  content:"";
-
-  position:absolute;
-
-  width:400px;
-  height:400px;
-
-  border-radius:50%;
-
-  background:
-  rgba(255,255,255,0.03);
-
-  top:-150px;
-  right:-150px;
 
 }
 
@@ -250,9 +242,6 @@ body{
   margin-bottom:20px;
 
   line-height:1.6;
-
-  position:relative;
-  z-index:2;
 
 }
 
@@ -268,21 +257,16 @@ body{
 
   margin-bottom:25px;
 
-  position:relative;
-  z-index:2;
-
 }
 
 .date-box{
 
   display:flex;
   justify-content:center;
+
   gap:15px;
 
   flex-wrap:wrap;
-
-  position:relative;
-  z-index:2;
 
 }
 
@@ -313,18 +297,10 @@ body.light input{
 
 }
 
-input:focus{
-
-  transform:scale(1.03);
-
-}
-
 button{
   border:none;
   cursor:pointer;
 }
-
-/* BUTTON */
 
 .main-btn{
 
@@ -351,13 +327,6 @@ button{
 
 }
 
-.main-btn:active{
-
-  transform:
-  scale(0.9);
-
-}
-
 /* MAIN */
 
 .main{
@@ -380,30 +349,9 @@ button{
 
   box-shadow:var(--shadow);
 
-  position:relative;
-
-  overflow:hidden;
-
 }
 
-.card::before{
-
-  content:"";
-
-  position:absolute;
-
-  width:250px;
-  height:250px;
-
-  background:
-  rgba(255,255,255,0.03);
-
-  border-radius:50%;
-
-  top:-100px;
-  right:-100px;
-
-}
+/* TIMER */
 
 .top-line{
 
@@ -411,14 +359,11 @@ button{
   justify-content:space-between;
   align-items:center;
 
+  margin-bottom:25px;
+
   flex-wrap:wrap;
 
   gap:10px;
-
-  margin-bottom:25px;
-
-  position:relative;
-  z-index:2;
 
 }
 
@@ -434,8 +379,6 @@ button{
 
 }
 
-/* TIMER */
-
 .study-time{
 
   text-align:center;
@@ -449,9 +392,6 @@ button{
   -webkit-text-fill-color:transparent;
 
   margin:25px 0;
-
-  position:relative;
-  z-index:2;
 
 }
 
@@ -468,14 +408,11 @@ button{
 
   margin-bottom:30px;
 
-  position:relative;
-  z-index:2;
-
 }
 
 body.light .progress{
 
-  background:#e7ebff;
+  background:#e6ebff;
 
 }
 
@@ -485,8 +422,6 @@ body.light .progress{
   height:100%;
 
   background:var(--main);
-
-  border-radius:20px;
 
   transition:1s linear;
 
@@ -502,9 +437,6 @@ body.light .progress{
   gap:15px;
 
   margin-bottom:25px;
-
-  position:relative;
-  z-index:2;
 
 }
 
@@ -540,13 +472,6 @@ body.light .control-btn{
 
 }
 
-.control-btn:active{
-
-  transform:
-  scale(0.9);
-
-}
-
 .active-btn{
 
   background:var(--main);
@@ -559,14 +484,12 @@ body.light .control-btn{
 
   display:flex;
   justify-content:center;
+
   gap:15px;
 
   flex-wrap:wrap;
 
   margin-bottom:25px;
-
-  position:relative;
-  z-index:2;
 
 }
 
@@ -576,16 +499,16 @@ body.light .control-btn{
 
 }
 
+/* MODES */
+
 .modes{
 
   display:flex;
   justify-content:center;
+
   flex-wrap:wrap;
 
   gap:15px;
-
-  position:relative;
-  z-index:2;
 
 }
 
@@ -621,79 +544,17 @@ body.light .mode{
 
 }
 
-/* MUSIC */
-
-.music-title{
-
-  font-size:36px;
-  margin-bottom:10px;
-
-  position:relative;
-  z-index:2;
-
-}
-
-.music-sub{
-
-  color:#38bdf8;
-  font-weight:600;
-
-  margin-bottom:20px;
-
-  position:relative;
-  z-index:2;
-
-}
-
-.music-box{
-
-  display:flex;
-  gap:15px;
-
-  flex-wrap:wrap;
-
-  margin-bottom:20px;
-
-  position:relative;
-  z-index:2;
-
-}
-
-.music-box input{
-
-  flex:1;
-
-}
-
-iframe{
-
-  width:100%;
-  height:340px;
-
-  border:none;
-
-  border-radius:25px;
-
-  position:relative;
-  z-index:2;
-
-}
-
 /* HISTORY */
 
 .history{
 
   margin-top:25px;
 
-  position:relative;
-  z-index:2;
-
 }
 
 .history h3{
 
   margin-bottom:15px;
-  font-size:24px;
 
 }
 
@@ -701,9 +562,11 @@ iframe{
 
   display:flex;
   flex-direction:column;
+
   gap:12px;
 
   max-height:250px;
+
   overflow:auto;
 
 }
@@ -727,6 +590,55 @@ body.light .history-item{
 
 }
 
+/* MUSIC */
+
+.music-title{
+
+  font-size:36px;
+  margin-bottom:10px;
+
+}
+
+.music-sub{
+
+  color:#38bdf8;
+
+  font-weight:600;
+
+  margin-bottom:20px;
+
+}
+
+.music-box{
+
+  display:flex;
+  gap:15px;
+
+  flex-wrap:wrap;
+
+  margin-bottom:20px;
+
+}
+
+.music-box input{
+
+  flex:1;
+
+}
+
+iframe{
+
+  width:100%;
+  height:340px;
+
+  border:none;
+
+  border-radius:25px;
+
+}
+
+/* FOOTER */
+
 .footer{
 
   text-align:center;
@@ -736,6 +648,8 @@ body.light .history-item{
   color:var(--sub);
 
 }
+
+/* MOBILE */
 
 @media(max-width:1000px){
 
@@ -774,7 +688,7 @@ body.light .history-item{
         <img src="https://cdn-icons-png.flaticon.com/512/785/785116.png">
 
         <div class="streak" id="streak">
-          1
+          0
         </div>
 
       </div>
@@ -791,7 +705,10 @@ body.light .history-item{
 
     </div>
 
-    <button class="theme-btn" onclick="toggleTheme()">
+    <button
+    class="theme-btn"
+    onclick="toggleTheme()"
+    id="themeBtn">
       🌙
     </button>
 
@@ -817,7 +734,9 @@ body.light .history-item{
 
       <input type="datetime-local" id="targetDate">
 
-      <button class="main-btn" onclick="setCountdown()">
+      <button
+      class="main-btn"
+      onclick="setCountdown()">
         Đặt thời gian
       </button>
 
@@ -956,7 +875,7 @@ body.light .history-item{
       </div>
 
       <div class="music-sub">
-        Dán link YouTube rồi bấm Phát
+        Dán link YouTube rồi bấm phát
       </div>
 
       <div class="music-box">
@@ -964,7 +883,7 @@ body.light .history-item{
         <input
         type="text"
         id="youtubeLink"
-        placeholder="Dán link YouTube...">
+        placeholder="https://youtube.com/...">
 
         <button
         class="main-btn"
@@ -992,19 +911,68 @@ body.light .history-item{
 
 <script>
 
-/* QUOTES */
+/* =========================
+   THEME FIX
+========================= */
+
+const savedTheme =
+localStorage.getItem("theme");
+
+if(savedTheme === "light"){
+
+  document.body.classList.add("light");
+
+  document.getElementById("themeBtn").innerHTML =
+  "☀";
+
+}
+
+function toggleTheme(){
+
+  document.body.classList.toggle("light");
+
+  const btn =
+  document.getElementById("themeBtn");
+
+  if(document.body.classList.contains("light")){
+
+    btn.innerHTML = "☀";
+
+    localStorage.setItem(
+      "theme",
+      "light"
+    );
+
+  }
+
+  else{
+
+    btn.innerHTML = "🌙";
+
+    localStorage.setItem(
+      "theme",
+      "dark"
+    );
+
+  }
+
+}
+
+/* =========================
+   QUOTES
+========================= */
 
 const quotes = [
 
-  "“Trí tưởng tượng quan trọng hơn kiến thức.” — Albert Einstein",
+"“Trí tưởng tượng quan trọng hơn kiến thức.” — Albert Einstein",
 
-  "“Thiên tài là 1% cảm hứng và 99% chăm chỉ.” — Thomas Edison",
+"“Thiên tài là 1% cảm hứng và 99% chăm chỉ.” — Thomas Edison",
 
-  "“Toán học là ngôn ngữ của vũ trụ.” — Galileo Galilei",
+"“Toán học là ngôn ngữ của vũ trụ.” — Galileo Galilei",
 
-  "“Không có gì đáng sợ, chỉ là chưa hiểu mà thôi.” — Marie Curie",
+"“Không có gì đáng sợ, chỉ là chưa hiểu mà thôi.” — Marie Curie",
 
-  "“Người chưa từng mắc sai lầm là người chưa từng thử điều gì mới.” — Albert Einstein"
+"“Người chưa từng mắc sai lầm là người chưa từng thử điều gì mới.” — Albert Einstein"
 
 ];
 
@@ -1025,54 +993,96 @@ setInterval(()=>{
 
 },5000);
 
-/* THEME */
+/* =========================
+   STREAK
+========================= */
 
-function toggleTheme(){
+let streak =
+parseInt(localStorage.getItem("streak")) || 0;
 
-  document.body.classList.toggle("light");
+let lastStudyDate =
+localStorage.getItem("lastStudyDate");
 
-  const btn =
-  document.querySelector(".theme-btn");
+document.getElementById("streak").innerHTML =
+streak;
 
-  if(document.body.classList.contains("light")){
+function getTodayDate(){
 
-    btn.innerHTML = "☀";
+  const today = new Date();
+
+  return today.getFullYear() + "-" +
+  String(today.getMonth()+1).padStart(2,"0") + "-" +
+  String(today.getDate()).padStart(2,"0");
+
+}
+
+function isYesterday(dateString){
+
+  const yesterday =
+  new Date();
+
+  yesterday.setDate(
+    yesterday.getDate() - 1
+  );
+
+  const y =
+  yesterday.getFullYear() + "-" +
+  String(yesterday.getMonth()+1).padStart(2,"0") + "-" +
+  String(yesterday.getDate()).padStart(2,"0");
+
+  return dateString === y;
+
+}
+
+function handleStudyCompleted(){
+
+  const today =
+  getTodayDate();
+
+  if(lastStudyDate === today){
+
+    return;
+
+  }
+
+  if(!lastStudyDate){
+
+    streak = 1;
+
+  }
+
+  else if(isYesterday(lastStudyDate)){
+
+    streak++;
 
   }
 
   else{
 
-    btn.innerHTML = "🌙";
+    streak = 1;
 
   }
 
-}
+  lastStudyDate = today;
 
-/* STREAK */
+  localStorage.setItem(
+    "streak",
+    streak
+  );
 
-let streak =
-parseInt(localStorage.getItem("streak")) || 0;
+  localStorage.setItem(
+    "lastStudyDate",
+    today
+  );
 
-let lastVisit =
-localStorage.getItem("lastVisit");
-
-const today =
-new Date().toDateString();
-
-if(lastVisit !== today){
-
-  streak++;
-
-  localStorage.setItem("streak", streak);
-
-  localStorage.setItem("lastVisit", today);
+  document.getElementById("streak").innerHTML =
+  streak;
 
 }
 
-document.getElementById("streak").innerHTML =
-streak;
-
-/* COUNTDOWN */
+/* =========================
+   COUNTDOWN
+========================= */
 
 let countdownInterval;
 
@@ -1104,19 +1114,19 @@ function setCountdown(){
     }
 
     const days =
-    Math.floor(distance / (1000*60*60*24));
+    Math.floor(distance/(1000*60*60*24));
 
     const hours =
-    Math.floor((distance % (1000*60*60*24))
-    / (1000*60*60));
+    Math.floor((distance%(1000*60*60*24))
+    /(1000*60*60));
 
     const minutes =
-    Math.floor((distance % (1000*60*60))
-    / (1000*60));
+    Math.floor((distance%(1000*60*60))
+    /(1000*60));
 
     const seconds =
-    Math.floor((distance % (1000*60))
-    / 1000);
+    Math.floor((distance%(1000*60))
+    /1000);
 
     document.getElementById("countdown").innerHTML =
 
@@ -1126,7 +1136,9 @@ function setCountdown(){
 
 }
 
-/* TIMER */
+/* =========================
+   TIMER
+========================= */
 
 let studySeconds = 25 * 60;
 let defaultStudy = 25 * 60;
@@ -1141,8 +1153,6 @@ let studyTimer;
 let running = false;
 
 let soundEnabled = true;
-
-/* UPDATE */
 
 function updateStudyDisplay(){
 
@@ -1169,18 +1179,17 @@ function updateStudyDisplay(){
   ? "⏳ " + timeText + " | MDungx Timer"
   : "MDungx Timer";
 
-  const status =
-  document.getElementById("statusText");
-
   if(isBreak){
 
-    status.innerHTML = "☕ Nghỉ ngơi";
+    document.getElementById("statusText").innerHTML =
+    "☕ Nghỉ ngơi";
 
   }
 
   else{
 
-    status.innerHTML = "✔ Làm việc";
+    document.getElementById("statusText").innerHTML =
+    "✔ Làm việc";
 
   }
 
@@ -1205,8 +1214,6 @@ function updateStudyDisplay(){
 
 }
 
-/* SET TIME */
-
 function setStudyTime(study,rest){
 
   pauseStudyTimer();
@@ -1222,8 +1229,6 @@ function setStudyTime(study,rest){
   updateStudyDisplay();
 
 }
-
-/* CUSTOM */
 
 function applyCustomTime(){
 
@@ -1245,8 +1250,6 @@ function applyCustomTime(){
 
 }
 
-/* START */
-
 function startStudyTimer(){
 
   if(running) return;
@@ -1267,13 +1270,15 @@ function startStudyTimer(){
 
         isBreak = true;
 
+        saveHistory();
+
+        handleStudyCompleted();
+
         if(soundEnabled){
 
           playBell();
 
         }
-
-        saveHistory();
 
         alert("☕ Đến giờ nghỉ!");
 
@@ -1318,8 +1323,6 @@ function startStudyTimer(){
 
 }
 
-/* PAUSE */
-
 function pauseStudyTimer(){
 
   clearInterval(studyTimer);
@@ -1327,8 +1330,6 @@ function pauseStudyTimer(){
   running = false;
 
 }
-
-/* RESET */
 
 function resetStudyTimer(){
 
@@ -1342,8 +1343,6 @@ function resetStudyTimer(){
   updateStudyDisplay();
 
 }
-
-/* SOUND */
 
 function toggleSound(){
 
@@ -1363,21 +1362,25 @@ function playBell(){
 
   const audio =
   new Audio(
-    "https://actions.google.com/sounds/v1/alarms/alarm_clock.ogg"
+  "https://actions.google.com/sounds/v1/alarms/alarm_clock.ogg"
   );
 
   audio.play();
 
 }
 
-/* YOUTUBE */
+/* =========================
+   YOUTUBE FIX
+========================= */
 
 function loadVideo(){
 
   const link =
-  document.getElementById("youtubeLink").value;
+  document.getElementById("youtubeLink").value.trim();
 
   let videoId = "";
+
+  /* LINK DÀI */
 
   if(link.includes("watch?v=")){
 
@@ -1386,29 +1389,42 @@ function loadVideo(){
 
   }
 
+  /* LINK NGẮN */
+
   else if(link.includes("youtu.be/")){
 
     videoId =
-    link.split("youtu.be/")[1];
+    link.split("youtu.be/")[1].split("?")[0];
+
+  }
+
+  /* CHỈ DÁN ID */
+
+  else{
+
+    videoId = link;
 
   }
 
   if(videoId){
 
     document.getElementById("youtubePlayer").src =
-    "https://www.youtube.com/embed/" + videoId;
+
+    `https://www.youtube.com/embed/${videoId}?autoplay=1`;
 
   }
 
   else{
 
-    alert("Link không hợp lệ!");
+    alert("Link YouTube không hợp lệ!");
 
   }
 
 }
 
-/* HISTORY */
+/* =========================
+   HISTORY
+========================= */
 
 function saveHistory(){
 
