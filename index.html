@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8"/>
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>MDungx Timer</title>
 
@@ -349,47 +349,6 @@
       margin-top:10px;
     }
 
-    /* FLOATING TIMER */
-
-    #floatingTimer{
-
-      position:fixed;
-      bottom:25px;
-      right:25px;
-
-      width:270px;
-      height:170px;
-
-      background:
-      linear-gradient(135deg,#0f172a,#1e1b4b);
-
-      border-radius:28px;
-
-      display:none;
-
-      align-items:center;
-      justify-content:center;
-
-      box-shadow:
-      0 15px 40px rgba(0,0,0,0.5);
-
-      z-index:999999;
-
-      border:
-      2px solid rgba(255,255,255,0.08);
-
-      backdrop-filter:blur(10px);
-
-    }
-
-    #floatingTime{
-
-      font-size:80px;
-      font-weight:700;
-      color:white;
-
-    }
-
     .footer{
       text-align:center;
       margin-top:30px;
@@ -422,19 +381,6 @@
 
       .quote{
         font-size:18px;
-      }
-
-      #floatingTimer{
-
-        width:190px;
-        height:110px;
-
-      }
-
-      #floatingTime{
-
-        font-size:48px;
-
       }
 
     }
@@ -510,7 +456,7 @@
         <h2>✔ Làm việc</h2>
 
         <span>
-          Học đi bạn ơi
+          Tab sẽ hiện thời gian khi chạy
         </span>
 
       </div>
@@ -611,16 +557,6 @@
 
   <div class="footer">
      MDungx Timer - DŨNG ĐẸP ZAI
-  </div>
-
-</div>
-
-<!-- FLOATING TIMER -->
-
-<div id="floatingTimer">
-
-  <div id="floatingTime">
-    25:00
   </div>
 
 </div>
@@ -743,12 +679,6 @@
 
   let soundEnabled = true;
 
-  const floatingTimer =
-  document.getElementById("floatingTimer");
-
-  const floatingTime =
-  document.getElementById("floatingTime");
-
   function updateStudyDisplay(){
 
     let minutes =
@@ -758,11 +688,6 @@
     studySeconds % 60;
 
     document.getElementById("studyTimer").innerHTML =
-    String(minutes).padStart(2,'0')
-    + ":" +
-    String(seconds).padStart(2,'0');
-
-    floatingTime.innerHTML =
     String(minutes).padStart(2,'0')
     + ":" +
     String(seconds).padStart(2,'0');
@@ -793,8 +718,6 @@
 
     running = true;
 
-    handleFloatingTimer();
-
     studyTimer = setInterval(() => {
 
       if(studySeconds > 0){
@@ -810,8 +733,6 @@
         running = false;
 
         document.title = "MDungx Timer";
-
-        floatingTimer.style.display = "none";
 
         if(soundEnabled){
 
@@ -833,8 +754,6 @@
 
     running = false;
 
-    floatingTimer.style.display = "none";
-
   }
 
   function resetStudyTimer(){
@@ -845,29 +764,9 @@
 
     updateStudyDisplay();
 
-    floatingTimer.style.display = "none";
-
   }
 
   updateStudyDisplay();
-
-  /* FLOATING TIMER */
-
-  function handleFloatingTimer(){
-
-    if(running){
-
-      floatingTimer.style.display = "flex";
-
-    }
-
-    else{
-
-      floatingTimer.style.display = "none";
-
-    }
-
-  }
 
   /* CHUÔNG */
 
