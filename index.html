@@ -3,7 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Đếm Ngược Học Tập</title>
+  <title>Study Focus</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
 
@@ -11,46 +16,94 @@
       margin:0;
       padding:0;
       box-sizing:border-box;
-      font-family: Arial, sans-serif;
+      font-family:'Poppins',sans-serif;
     }
 
     body{
-      background: linear-gradient(135deg,#0f172a,#1e293b);
-      color:white;
       min-height:100vh;
-      padding:25px;
+      background:
+      radial-gradient(circle at top left,#1e3a8a,#0f172a 40%),
+      radial-gradient(circle at bottom right,#0f766e,#111827 40%);
+      color:white;
+      overflow-x:hidden;
+      padding:30px;
+    }
+
+    .bg-blur{
+      position:fixed;
+      width:400px;
+      height:400px;
+      border-radius:50%;
+      filter:blur(100px);
+      z-index:-1;
+      opacity:0.4;
+    }
+
+    .blur1{
+      background:#38bdf8;
+      top:-100px;
+      left:-100px;
+    }
+
+    .blur2{
+      background:#14b8a6;
+      bottom:-100px;
+      right:-100px;
     }
 
     .container{
-      max-width:1300px;
+      max-width:1400px;
       margin:auto;
     }
 
     /* TOP */
 
     .top{
-      background: rgba(255,255,255,0.07);
-      border:1px solid rgba(255,255,255,0.1);
-      border-radius:30px;
-      padding:50px;
+      background:rgba(255,255,255,0.08);
+      border:1px solid rgba(255,255,255,0.12);
+      backdrop-filter:blur(18px);
+      border-radius:35px;
+      padding:60px;
       text-align:center;
-      margin-bottom:30px;
-      backdrop-filter: blur(10px);
+      box-shadow:0 15px 40px rgba(0,0,0,0.35);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .top::before{
+      content:"";
+      position:absolute;
+      width:250px;
+      height:250px;
+      background:rgba(56,189,248,0.15);
+      border-radius:50%;
+      top:-80px;
+      right:-80px;
     }
 
     .main-title{
-      font-size:65px;
-      font-weight:bold;
+      font-size:70px;
+      font-weight:700;
       margin-bottom:20px;
+      letter-spacing:1px;
+    }
+
+    .quote{
+      max-width:1000px;
+      margin:auto;
+      font-size:23px;
+      line-height:1.7;
+      color:#dbeafe;
+      font-style:italic;
+      min-height:80px;
     }
 
     .countdown{
-      font-size:90px;
-      font-weight:bold;
+      font-size:95px;
+      font-weight:700;
+      margin:40px 0;
       color:#38bdf8;
-      margin:35px 0;
-      line-height:1.3;
-      word-break: break-word;
+      text-shadow:0 0 20px rgba(56,189,248,0.5);
     }
 
     .target-box{
@@ -58,76 +111,90 @@
     }
 
     input[type="datetime-local"]{
-      padding:15px;
+      width:340px;
+      padding:18px;
       border:none;
-      border-radius:15px;
-      font-size:18px;
-      width:320px;
+      border-radius:18px;
+      font-size:17px;
+      background:rgba(255,255,255,0.12);
+      color:white;
       outline:none;
+      border:1px solid rgba(255,255,255,0.1);
+    }
+
+    input::placeholder{
+      color:#cbd5e1;
     }
 
     button{
-      padding:15px 25px;
+      padding:18px 28px;
       border:none;
-      border-radius:15px;
-      background:#38bdf8;
+      border-radius:18px;
+      background:linear-gradient(135deg,#38bdf8,#0ea5e9);
       color:white;
       font-size:16px;
+      font-weight:600;
       cursor:pointer;
       transition:0.3s;
-      margin-left:10px;
+      margin-left:12px;
+      box-shadow:0 5px 20px rgba(56,189,248,0.35);
     }
 
     button:hover{
-      background:#0ea5e9;
-      transform:scale(1.05);
+      transform:translateY(-3px) scale(1.03);
+      box-shadow:0 10px 25px rgba(56,189,248,0.5);
     }
 
     /* BODY */
 
     .main{
+      margin-top:30px;
       display:grid;
       grid-template-columns:1fr 1fr;
-      gap:25px;
+      gap:30px;
     }
 
     .box{
-      background: rgba(255,255,255,0.07);
-      border:1px solid rgba(255,255,255,0.1);
-      border-radius:25px;
-      padding:30px;
-      backdrop-filter: blur(10px);
+      background:rgba(255,255,255,0.08);
+      border:1px solid rgba(255,255,255,0.12);
+      backdrop-filter:blur(18px);
+      border-radius:30px;
+      padding:35px;
+      box-shadow:0 15px 35px rgba(0,0,0,0.25);
     }
 
     h2{
-      font-size:32px;
-      margin-bottom:25px;
-      color:#38bdf8;
+      font-size:34px;
+      margin-bottom:30px;
+      color:#7dd3fc;
     }
 
     /* TIMER */
 
     .timer-option{
-      background:#1e293b;
-      padding:20px;
-      border-radius:18px;
+      background:rgba(255,255,255,0.08);
+      padding:22px;
+      border-radius:20px;
       margin-bottom:18px;
       cursor:pointer;
       transition:0.3s;
+      border:1px solid rgba(255,255,255,0.08);
       font-size:20px;
+      font-weight:500;
     }
 
     .timer-option:hover{
-      background:#334155;
-      transform:translateY(-3px);
+      background:rgba(56,189,248,0.15);
+      transform:translateY(-4px);
     }
 
     .study-timer{
-      font-size:75px;
+      font-size:85px;
+      font-weight:700;
       text-align:center;
-      margin:35px 0;
-      font-weight:bold;
+      margin:40px 0;
       color:#facc15;
+      text-shadow:0 0 20px rgba(250,204,21,0.4);
     }
 
     .controls{
@@ -138,45 +205,60 @@
 
     .search{
       width:100%;
-      padding:16px;
+      padding:18px;
       border:none;
-      border-radius:15px;
-      outline:none;
+      border-radius:18px;
       font-size:16px;
+      outline:none;
+      background:rgba(255,255,255,0.1);
+      color:white;
+      border:1px solid rgba(255,255,255,0.1);
       margin-bottom:20px;
     }
 
     iframe{
       width:100%;
-      height:350px;
+      height:360px;
       border:none;
-      border-radius:20px;
+      border-radius:22px;
       margin-top:20px;
+      box-shadow:0 10px 25px rgba(0,0,0,0.35);
     }
 
     .footer{
-      margin-top:35px;
       text-align:center;
-      color:#94a3b8;
+      margin-top:35px;
+      color:#cbd5e1;
       font-size:18px;
+      opacity:0.8;
     }
 
-    @media(max-width:900px){
+    /* MOBILE */
+
+    @media(max-width:950px){
 
       .main{
         grid-template-columns:1fr;
       }
 
-      .countdown{
-        font-size:50px;
+      .main-title{
+        font-size:42px;
       }
 
-      .main-title{
-        font-size:40px;
+      .countdown{
+        font-size:55px;
       }
 
       .study-timer{
-        font-size:55px;
+        font-size:60px;
+      }
+
+      .quote{
+        font-size:18px;
+      }
+
+      .top{
+        padding:35px;
       }
 
       input[type="datetime-local"]{
@@ -185,15 +267,19 @@
       }
 
       button{
+        width:100%;
+        margin-left:0;
         margin-top:10px;
       }
 
     }
 
   </style>
-
 </head>
 <body>
+
+<div class="bg-blur blur1"></div>
+<div class="bg-blur blur2"></div>
 
 <div class="container">
 
@@ -202,7 +288,11 @@
   <div class="top">
 
     <div class="main-title">
-      ⏳ Đếm Ngược Mục Tiêu
+      ⏳ Study Focus
+    </div>
+
+    <div class="quote" id="quote">
+      “Trí tưởng tượng quan trọng hơn kiến thức.” — Albert Einstein
     </div>
 
     <div class="countdown" id="countdown">
@@ -214,7 +304,7 @@
       <input type="datetime-local" id="targetDate">
 
       <button onclick="setCountdown()">
-        Đặt Thời Gian
+        Đặt Mục Tiêu
       </button>
 
     </div>
@@ -269,7 +359,7 @@
 
     <div class="box">
 
-      <h2>🎵 Nghe Nhạc Tập Trung</h2>
+      <h2>🎵 Nhạc Tập Trung</h2>
 
       <input
         type="text"
@@ -293,16 +383,47 @@
   </div>
 
   <div class="footer">
-    Thiết kế dành cho học tập ✨
+    ✨ Thiết kế dành cho học tập và tập trung
   </div>
 
 </div>
 
 <script>
 
-  /* =========================
-     ĐẾM NGƯỢC NGÀY
-  ========================== */
+  /* QUOTES */
+
+  const quotes = [
+
+    "“Trí tưởng tượng quan trọng hơn kiến thức.” — Albert Einstein",
+
+    "“Thiên tài là 1% cảm hứng và 99% chăm chỉ.” — Thomas Edison",
+
+    "“Toán học là ngôn ngữ của vũ trụ.” — Galileo Galilei",
+
+    "“Không có gì đáng sợ, chỉ là chưa hiểu mà thôi.” — Marie Curie",
+
+    "“Điều chúng ta biết chỉ là giọt nước.” — Isaac Newton",
+
+    "“Người chưa từng mắc sai lầm là người chưa từng thử điều gì mới.” — Albert Einstein"
+
+  ];
+
+  let quoteIndex = 0;
+
+  setInterval(() => {
+
+    quoteIndex++;
+
+    if(quoteIndex >= quotes.length){
+      quoteIndex = 0;
+    }
+
+    document.getElementById("quote").innerHTML =
+    quotes[quoteIndex];
+
+  },5000);
+
+  /* COUNTDOWN */
 
   let countdownInterval;
 
@@ -325,7 +446,7 @@
       if(distance < 0){
 
         document.getElementById("countdown").innerHTML =
-        "🎉 Đã hết thời gian!";
+        "🎉 Đã đến mục tiêu!";
 
         clearInterval(countdownInterval);
 
@@ -333,21 +454,18 @@
       }
 
       const days =
-      Math.floor(distance / (1000 * 60 * 60 * 24));
+      Math.floor(distance / (1000*60*60*24));
 
       const hours =
-      Math.floor(
-      (distance % (1000 * 60 * 60 * 24))
-      / (1000 * 60 * 60));
+      Math.floor((distance % (1000*60*60*24))
+      / (1000*60*60));
 
       const minutes =
-      Math.floor(
-      (distance % (1000 * 60 * 60))
-      / (1000 * 60));
+      Math.floor((distance % (1000*60*60))
+      / (1000*60));
 
       const seconds =
-      Math.floor(
-      (distance % (1000 * 60))
+      Math.floor((distance % (1000*60))
       / 1000);
 
       document.getElementById("countdown").innerHTML =
@@ -357,14 +475,10 @@
 
   }
 
-  /* =========================
-     TIMER HỌC TẬP
-  ========================== */
+  /* STUDY TIMER */
 
   let studySeconds = 25 * 60;
-
   let studyTimer;
-
   let running = false;
 
   function updateStudyDisplay(){
@@ -376,7 +490,8 @@
     studySeconds % 60;
 
     document.getElementById("studyTimer").innerHTML =
-    String(minutes).padStart(2,'0') + ":" +
+    String(minutes).padStart(2,'0')
+    + ":" +
     String(seconds).padStart(2,'0');
 
   }
@@ -411,6 +526,8 @@
 
         running = false;
 
+        document.title = "Study Focus";
+
         alert("🎉 Hoàn thành phiên học!");
 
       }
@@ -424,6 +541,8 @@
     clearInterval(studyTimer);
 
     running = false;
+
+    document.title = "Study Focus";
 
   }
 
@@ -439,9 +558,7 @@
 
   updateStudyDisplay();
 
-  /* =========================
-     YOUTUBE PLAYER
-  ========================== */
+  /* YOUTUBE */
 
   function loadVideo(){
 
@@ -456,6 +573,7 @@
       link.split("watch?v=")[1].split("&")[0];
 
     }
+
     else if(link.includes("youtu.be/")){
 
       videoId =
@@ -469,6 +587,7 @@
       "https://www.youtube.com/embed/" + videoId;
 
     }
+
     else{
 
       alert("Link YouTube không hợp lệ!");
@@ -476,6 +595,54 @@
     }
 
   }
+
+  /* TAB TITLE */
+
+  const originalTitle = "Study Focus";
+
+  function updateTabTitle(){
+
+    let minutes =
+    Math.floor(studySeconds / 60);
+
+    let seconds =
+    studySeconds % 60;
+
+    let timeText =
+    String(minutes).padStart(2,'0')
+    + ":" +
+    String(seconds).padStart(2,'0');
+
+    if(document.hidden && running){
+
+      document.title =
+      "⏳ " + timeText + " đang học...";
+
+    }
+
+    else{
+
+      document.title = originalTitle;
+
+    }
+
+  }
+
+  setInterval(() => {
+
+    if(running){
+
+      updateTabTitle();
+
+    }
+
+  },1000);
+
+  document.addEventListener("visibilitychange", () => {
+
+    updateTabTitle();
+
+  });
 
 </script>
 
