@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>MDungx Timer</title>
 
@@ -142,7 +142,7 @@
     }
 
     .countdown{
-      font-size:80px;
+      font-size:75px;
       font-weight:700;
       background:var(--main);
       -webkit-background-clip:text;
@@ -367,7 +367,7 @@
       }
 
       .countdown{
-        font-size:50px;
+        font-size:45px;
       }
 
       .title h1{
@@ -406,7 +406,7 @@
         <h1>MDungx Timer</h1>
 
         <p>
-          Phương pháp hiệu quả để tập trung học tập.
+          Học tập hiệu quả — tập trung tối đa.
         </p>
 
       </div>
@@ -456,7 +456,7 @@
         <h2>✔ Làm việc</h2>
 
         <span>
-          Tab sẽ hiện thời gian khi chạy
+          Mini timer hoạt động riêng
         </span>
 
       </div>
@@ -495,6 +495,12 @@
         class="control-btn"
         onclick="toggleSound()">
           🔔 Chuông
+        </button>
+
+        <button
+        class="control-btn"
+        onclick="openMiniTimer()">
+          🗔 Mini Timer
         </button>
 
       </div>
@@ -556,7 +562,7 @@
   </div>
 
   <div class="footer">
-     MDungx Timer - DŨNG ĐẸP ZAI
+    ✨ MDungx Timer
   </div>
 
 </div>
@@ -687,16 +693,35 @@
     let seconds =
     studySeconds % 60;
 
-    document.getElementById("studyTimer").innerHTML =
+    const timeText =
+
     String(minutes).padStart(2,'0')
     + ":" +
     String(seconds).padStart(2,'0');
+
+    document.getElementById("studyTimer").innerHTML =
+    timeText;
 
     const progress =
     (studySeconds / defaultTime) * 100;
 
     document.getElementById("progressBar").style.width =
     progress + "%";
+
+    /* UPDATE MINI WINDOW */
+
+    if(miniWindow && !miniWindow.closed){
+
+      const mini =
+      miniWindow.document.getElementById("mini");
+
+      if(mini){
+
+        mini.innerHTML = timeText;
+
+      }
+
+    }
 
   }
 
@@ -880,6 +905,78 @@
     updateTabTitle();
 
   });
+
+  /* MINI WINDOW */
+
+  let miniWindow = null;
+
+  function openMiniTimer(){
+
+    if(miniWindow && !miniWindow.closed){
+
+      miniWindow.focus();
+      return;
+
+    }
+
+    miniWindow = window.open(
+      "",
+      "MiniTimer",
+      "width=330,height=230"
+    );
+
+    miniWindow.document.write(`
+
+    <html>
+
+    <head>
+
+    <title>MDungx Mini Timer</title>
+
+    <style>
+
+      body{
+
+        margin:0;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+
+        height:100vh;
+
+        background:
+        linear-gradient(135deg,#0f172a,#1e1b4b);
+
+        color:white;
+
+        font-family:Poppins,sans-serif;
+
+        overflow:hidden;
+
+      }
+
+      #mini{
+
+        font-size:90px;
+        font-weight:700;
+
+      }
+
+    </style>
+
+    </head>
+
+    <body>
+
+      <div id="mini">25:00</div>
+
+    </body>
+
+    </html>
+
+    `);
+
+  }
 
 </script>
 
