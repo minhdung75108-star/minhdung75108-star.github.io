@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 <title>MDungx Timer</title>
 
@@ -38,10 +37,10 @@
 
 body.light{
 
-  --bg:#f3f4ff;
+  --bg:#f4f6ff;
   --card:#ffffff;
-  --text:#151515;
-  --sub:#7f88aa;
+  --text:#161616;
+  --sub:#7d88a8;
 
   --main:
   linear-gradient(135deg,#6d5dfc,#c183ff);
@@ -108,21 +107,16 @@ body{
 
   position:relative;
 
-  overflow:hidden;
-
   box-shadow:var(--shadow);
+
+  overflow:hidden;
 
 }
 
 .fire-box img{
 
-  width:58px;
-
-  position:absolute;
-
-  top:10px;
-
-  z-index:1;
+  width:72px;
+  z-index:2;
 
 }
 
@@ -130,31 +124,26 @@ body{
 
   position:absolute;
 
-  bottom:10px;
-  right:10px;
-
-  width:32px;
-  height:32px;
-
-  border-radius:50%;
+  bottom:8px;
+  right:12px;
 
   background:#ff9800;
 
-  color:white;
+  width:28px;
+  height:28px;
+
+  border-radius:50%;
 
   display:flex;
   align-items:center;
   justify-content:center;
 
-  font-size:14px;
+  font-size:15px;
   font-weight:700;
 
+  color:white;
+
   border:2px solid white;
-
-  z-index:3;
-
-  box-shadow:
-  0 4px 10px rgba(0,0,0,0.25);
 
 }
 
@@ -169,7 +158,6 @@ body{
 
   color:var(--sub);
   margin-top:5px;
-
   font-size:18px;
 
 }
@@ -222,9 +210,9 @@ body{
 
   padding:40px;
 
-  margin-bottom:30px;
-
   box-shadow:var(--shadow);
+
+  margin-bottom:30px;
 
   text-align:center;
 
@@ -259,9 +247,9 @@ body{
 
   color:var(--sub);
 
-  line-height:1.6;
-
   margin-bottom:20px;
+
+  line-height:1.6;
 
   position:relative;
   z-index:2;
@@ -289,7 +277,6 @@ body{
 
   display:flex;
   justify-content:center;
-
   gap:15px;
 
   flex-wrap:wrap;
@@ -408,10 +395,10 @@ button{
   width:250px;
   height:250px;
 
-  border-radius:50%;
-
   background:
   rgba(255,255,255,0.03);
+
+  border-radius:50%;
 
   top:-100px;
   right:-100px;
@@ -473,9 +460,9 @@ button{
   width:100%;
   height:18px;
 
-  border-radius:20px;
-
   background:#334155;
+
+  border-radius:20px;
 
   overflow:hidden;
 
@@ -572,10 +559,9 @@ body.light .control-btn{
 
   display:flex;
   justify-content:center;
+  gap:15px;
 
   flex-wrap:wrap;
-
-  gap:15px;
 
   margin-bottom:25px;
 
@@ -590,13 +576,10 @@ body.light .control-btn{
 
 }
 
-/* MODES */
-
 .modes{
 
   display:flex;
   justify-content:center;
-
   flex-wrap:wrap;
 
   gap:15px;
@@ -643,7 +626,6 @@ body.light .mode{
 .music-title{
 
   font-size:36px;
-
   margin-bottom:10px;
 
   position:relative;
@@ -666,7 +648,6 @@ body.light .mode{
 .music-box{
 
   display:flex;
-
   gap:15px;
 
   flex-wrap:wrap;
@@ -711,9 +692,8 @@ iframe{
 
 .history h3{
 
-  font-size:24px;
-
   margin-bottom:15px;
+  font-size:24px;
 
 }
 
@@ -721,7 +701,6 @@ iframe{
 
   display:flex;
   flex-direction:column;
-
   gap:12px;
 
   max-height:250px;
@@ -748,8 +727,6 @@ body.light .history-item{
 
 }
 
-/* FOOTER */
-
 .footer{
 
   text-align:center;
@@ -771,7 +748,7 @@ body.light .history-item{
   }
 
   .countdown{
-    font-size:45px;
+    font-size:42px;
   }
 
   .title h1{
@@ -797,7 +774,7 @@ body.light .history-item{
         <img src="https://cdn-icons-png.flaticon.com/512/785/785116.png">
 
         <div class="streak" id="streak">
-          0
+          1
         </div>
 
       </div>
@@ -863,7 +840,7 @@ body.light .history-item{
         </h2>
 
         <span>
-          Mục tiêu đỗ NV1!!!
+          MDungx Pomodoro
         </span>
 
       </div>
@@ -877,8 +854,6 @@ body.light .history-item{
         <div class="progress-bar" id="progressBar"></div>
 
       </div>
-
-      <!-- CONTROLS -->
 
       <div class="controls">
 
@@ -1010,30 +985,26 @@ body.light .history-item{
   </div>
 
   <div class="footer">
-     MDungx Timer - DŨNG ĐẸP ZAI
+    ✨ MDungx Timer
   </div>
 
 </div>
 
 <script>
 
-/* =========================
-   QUOTES
-========================= */
+/* QUOTES */
 
 const quotes = [
 
-"“Trí tưởng tượng quan trọng hơn kiến thức.” — Albert Einstein",
+  "“Trí tưởng tượng quan trọng hơn kiến thức.” — Albert Einstein",
 
-"“Thiên tài là 1% cảm hứng và 99% chăm chỉ.” — Thomas Edison",
+  "“Thiên tài là 1% cảm hứng và 99% chăm chỉ.” — Thomas Edison",
 
-"“Toán học là ngôn ngữ của vũ trụ.” — Galileo Galilei",
+  "“Toán học là ngôn ngữ của vũ trụ.” — Galileo Galilei",
 
-"“Không có gì đáng sợ, chỉ là chưa hiểu mà thôi.” — Marie Curie",
+  "“Không có gì đáng sợ, chỉ là chưa hiểu mà thôi.” — Marie Curie",
 
-"“Người chưa từng mắc sai lầm là người chưa từng thử điều gì mới.” — Albert Einstein"
-
-"“Thi tốt, đỗ NV1 nhé!!!.” — Minh Dũng"
+  "“Người chưa từng mắc sai lầm là người chưa từng thử điều gì mới.” — Albert Einstein"
 
 ];
 
@@ -1054,9 +1025,7 @@ setInterval(()=>{
 
 },5000);
 
-/* =========================
-   THEME
-========================= */
+/* THEME */
 
 function toggleTheme(){
 
@@ -1079,109 +1048,31 @@ function toggleTheme(){
 
 }
 
-/* =========================
-   STREAK SYSTEM
-========================= */
+/* STREAK */
 
 let streak =
 parseInt(localStorage.getItem("streak")) || 0;
 
-let lastStudyDate =
-localStorage.getItem("lastStudyDate");
+let lastVisit =
+localStorage.getItem("lastVisit");
 
-function updateStreakUI(){
+const today =
+new Date().toDateString();
 
-  document.getElementById("streak").innerHTML =
-  streak;
+if(lastVisit !== today){
 
-}
+  streak++;
 
-updateStreakUI();
+  localStorage.setItem("streak", streak);
 
-function getTodayDate(){
-
-  const today = new Date();
-
-  return today.getFullYear() + "-" +
-  String(today.getMonth()+1).padStart(2,"0") + "-" +
-  String(today.getDate()).padStart(2,"0");
+  localStorage.setItem("lastVisit", today);
 
 }
 
-function isYesterday(dateString){
+document.getElementById("streak").innerHTML =
+streak;
 
-  const yesterday =
-  new Date();
-
-  yesterday.setDate(
-    yesterday.getDate() - 1
-  );
-
-  const y =
-  yesterday.getFullYear() + "-" +
-  String(yesterday.getMonth()+1).padStart(2,"0") + "-" +
-  String(yesterday.getDate()).padStart(2,"0");
-
-  return dateString === y;
-
-}
-
-function handleStudyCompleted(){
-
-  const today =
-  getTodayDate();
-
-  /* HỌC RỒI */
-
-  if(lastStudyDate === today){
-
-    return;
-
-  }
-
-  /* CHƯA HỌC BAO GIỜ */
-
-  if(!lastStudyDate){
-
-    streak = 1;
-
-  }
-
-  /* HỌC LIÊN TỤC */
-
-  else if(isYesterday(lastStudyDate)){
-
-    streak++;
-
-  }
-
-  /* BỎ 1 NGÀY */
-
-  else{
-
-    streak = 1;
-
-  }
-
-  lastStudyDate = today;
-
-  localStorage.setItem(
-    "streak",
-    streak
-  );
-
-  localStorage.setItem(
-    "lastStudyDate",
-    today
-  );
-
-  updateStreakUI();
-
-}
-
-/* =========================
-   COUNTDOWN
-========================= */
+/* COUNTDOWN */
 
 let countdownInterval;
 
@@ -1235,9 +1126,7 @@ function setCountdown(){
 
 }
 
-/* =========================
-   TIMER
-========================= */
+/* TIMER */
 
 let studySeconds = 25 * 60;
 let defaultStudy = 25 * 60;
@@ -1378,15 +1267,13 @@ function startStudyTimer(){
 
         isBreak = true;
 
-        saveHistory();
-
-        handleStudyCompleted();
-
         if(soundEnabled){
 
           playBell();
 
         }
+
+        saveHistory();
 
         alert("☕ Đến giờ nghỉ!");
 
@@ -1476,16 +1363,14 @@ function playBell(){
 
   const audio =
   new Audio(
-  "https://actions.google.com/sounds/v1/alarms/alarm_clock.ogg"
+    "https://actions.google.com/sounds/v1/alarms/alarm_clock.ogg"
   );
 
   audio.play();
 
 }
 
-/* =========================
-   YOUTUBE
-========================= */
+/* YOUTUBE */
 
 function loadVideo(){
 
@@ -1523,9 +1408,7 @@ function loadVideo(){
 
 }
 
-/* =========================
-   HISTORY
-========================= */
+/* HISTORY */
 
 function saveHistory(){
 
